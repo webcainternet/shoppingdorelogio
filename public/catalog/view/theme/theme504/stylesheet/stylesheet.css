@@ -2935,7 +2935,9 @@ label{
 
 
 
-
+.quickview {
+	display: none;
+}
 
 
 
