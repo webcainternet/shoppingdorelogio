@@ -2295,7 +2295,7 @@ a.quickview:hover {
 	color:#fff
 }
 a.quickview {
-	display:inline-block;
+	display:none;
 	visibility:hidden;
 	z-index:5;
 	width: 107px;
