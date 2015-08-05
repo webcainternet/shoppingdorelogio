@@ -49,8 +49,12 @@
 	
   </div>
 	<div class="copyright">
-		<div class="container">
+		<div class="container" style="float: left; width: 50%;">
 			<?php echo $powered; ?><!-- [[%FOOTER_LINK]] -->
+		</div> 
+
+		<div class="container" style="float: left; width: 50%; text-align: right;">
+			<img src="/image/bandeiras3.png" width="250" style="width: 250px;">
 		</div> 
 	</div>
 </footer>
