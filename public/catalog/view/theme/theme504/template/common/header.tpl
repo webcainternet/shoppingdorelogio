@@ -179,6 +179,11 @@ type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
 				<li><a href="//www.twitter.com/"><i class="fa fa-twitter"></i></a></li>
 				<li><a href="//www.pinterest.com/"><i class="fa fa-pinterest"></i></a></li>
 			</ul>
+			<!-- Telefone -->
+			<div id="headertelefone" style="float: right; margin-right: 15px;">
+				<div class="box-heading"><h3 style="color: #47c7de; margin-top: 20px;">Tel: 21 3085-3407</h3></div>
+			</div>
+			<!-- FIM Telefone -->
 			<div class="clear"></div>
 		</div>
 	</div>
