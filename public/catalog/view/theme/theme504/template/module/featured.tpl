@@ -95,11 +95,64 @@
 				</div>
 				<?php } ?>
 				<?php if ($product['price']) { ?>
+				<?php /* OLD
 				<div class="price">
 				<?php if (!$product['special']) { ?>
 				<?php echo $product['price']; ?>
+				*/ ?>
+					<?php /* START PARC */ ?>
+					<div class="product_price price">
+					<?php if (!$product['special']) { ?>
+					<?php
+						$precoparc = $product['price']; 
+						$precoparc = str_replace("R$", "", $precoparc);
+						$precoparc = str_replace(" ", "", $precoparc);
+						$precoparc = str_replace(".", "", $precoparc);
+						$precoparc = str_replace(",", "", $precoparc);
+						$precoparc = $precoparc / 100;
+						$precoparc = $precoparc / 12;
+						$precoparc = number_format($precoparc,2,',','.');
+
+						$precoboleto = $product['price']; 
+						$precoboleto = str_replace("R$", "", $precoboleto);
+						$precoboleto = str_replace(" ", "", $precoboleto);
+						$precoboleto = str_replace(".", "", $precoboleto);
+						$precoboleto = str_replace(",", "", $precoboleto);
+						$precoboleto = $precoboleto / 100;
+						$precoboleto = number_format($precoboleto*0.80,2,',','.');
+					?>
+					<?php echo $product['price']; ?>
+					<div class="div-parc" style="font-size: 12px;">ou 12x de <span class="price-parc">R$ <?php echo $precoparc; ?></span></div>
+					<?php /* END PARC */ ?>
 				<?php } else { ?>
+				<?php /* OLD
 				<span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
+				*/ ?>
+					<?php /* START PARC */ ?>
+					<span class="price-old" style="font-size: 12px;">De: <?php echo $product['price']; ?></span>
+					<span class="price-new">Por: <?php echo $product['special']; ?></span>
+					<?php
+						$precoparc = $product['special']; 
+						$precoparc = str_replace("R$", "", $precoparc);
+						$precoparc = str_replace(" ", "", $precoparc);
+						$precoparc = str_replace(".", "", $precoparc);
+						$precoparc = str_replace(",", "", $precoparc);
+						$precoparc = $precoparc / 12;
+						$precoparc = $precoparc / 100;
+						$precoparc = number_format($precoparc,2,',','.');
+
+						$precoboleto = $product['special']; 
+						$precoboleto = str_replace("R$", "", $precoboleto);
+						$precoboleto = str_replace(" ", "", $precoboleto);
+						$precoboleto = str_replace(".", "", $precoboleto);
+						$precoboleto = str_replace(",", "", $precoboleto);
+						$precoboleto = $precoboleto / 100;
+						$precoboleto = number_format($precoboleto*0.80,2,',','.');
+					?>
+					
+					<div class="div-parc" style="font-size: 12px;">ou 12x de <span class="price-parc">R$ <?php echo $precoparc; ?></span></div>
+
+					<?php /* END PARC */ ?>
 				<?php } ?>
 				<?php if ($product['tax']) { ?>
 				<span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
