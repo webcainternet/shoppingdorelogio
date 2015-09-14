@@ -1,0 +1,41 @@
+<modification>
+        <name>Cielo WebService</name>
+        <version>1.0</version>
+        <author>Brasmod Developer</author>
+        <code>cielo_webservice</code>
+        <file path="admin/controller/common/header.php">
+                <operation info="Inclusao da Aba do Módulo Cielo no Controller">
+                        <search><![CDATA[$this->load->language('common/header');]]></search>
+                        <add position="after"><![CDATA[
+                            $this->language->load('payment/cielo');
+
+                            $data['cielo_status'] = $this->registry->get('config')->get('cielo_status');
+
+                            $data['text_cielo_configure'] = $this->language->get('text_cielo_configure');             
+                            $data['text_cielo_transactions'] = $this->language->get('text_cielo_transactions');           
+
+                            if (isset($this->session->data['token']))
+                            {
+                                $data['link_cielo_configure'] = $this->url->link('payment/cielo/edit', 'token=' . $this->session->data['token'], 'SSL');
+                                $data['link_cielo_transactions'] = $this->url->link('payment/cielo', 'token=' . $this->session->data['token'], 'SSL');
+                            }
+                        ]]></add>
+                </operation>
+        </file>
+		<file path="admin/view/template/common/header.tpl">
+        <operation info="Inclusao de Aba do Módulo Cielo na View">
+                <search index="1"><![CDATA[<li class="dropdown">]]></search>
+                <add position="before"><![CDATA[
+							<?php if ( $cielo_status == 1 ) { ?>
+								<li id="Cielo" class="dropdown">
+									<a href="<?php echo $link_cielo_configure; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-credit-card fa-lg"></i></a>
+									<ul class="dropdown-menu dropdown-menu-right">
+									  <li><a href="<?php echo $link_cielo_configure; ?>"><?php echo $text_cielo_configure; ?></a></li>
+									  <li><a href="<?php echo $link_cielo_transactions; ?>"><?php echo $text_cielo_transactions; ?></a></li>
+									</ul>
+								</li>
+							<?php } ?>
+			]]></add>
+        </operation>
+    </file>
+</modification>
