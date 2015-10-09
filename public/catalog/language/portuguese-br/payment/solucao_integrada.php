@@ -1,7 +1,7 @@
 <?php
 // Text
-$_['text_title']     	= 'Solucão Integrada Cielo';
-$_['button_confirm'] 	= 'Confirmar Compra e ir para a Solucão Integrada Cielo';
+$_['text_title']     	= 'Pagamento via Cielo';
+$_['button_confirm'] 	= 'Confirmar Compra e ir para o pagamento';
 $_['text_wait'] 		= 'Aguarde, você está sendo redirecionado para o ambiente seguro da Solucão Integrada Cielo!';
 $_['text_cpfcnpj'] 		= 'Informe o seu CPF ou CNPJ (somente números):';
 $_['erro_cpfcnpj'] 		= 'Atenção, informe um CPF/CNPJ válido!';
